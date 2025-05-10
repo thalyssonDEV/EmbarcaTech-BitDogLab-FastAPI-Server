@@ -11,11 +11,11 @@ app = FastAPI()
 last_data = {}
 
 # Montar a pasta de arquivos estáticos
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 # Configuração do motor de templates
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory="templates")
 
 
 @app.api_route("/data", methods=["GET", "POST"])
