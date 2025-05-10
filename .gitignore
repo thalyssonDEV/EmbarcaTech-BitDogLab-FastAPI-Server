@@ -1,0 +1,5 @@
+__pychace__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
