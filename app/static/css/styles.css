@@ -1,0 +1,149 @@
+/* Reset de alguns estilos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos Globais */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #2e2e2e; /* Cor escura de fundo */
+  color: #e0e0e0; /* Texto claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Cabeçalho com gradiente */
+.header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to right, #4e73df, #1f3a69); /* Gradiente de azul */
+  border-radius: 10px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Grid de Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Estilo dos Cards */
+.card {
+  background-color: #444444; /* Fundo escuro para os cards */
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background-color: #555555; /* Muda o fundo no hover */
+}
+
+.icon-wrapper {
+  font-size: 3rem; /* Tamanho ajustado para o ícone */
+  color: #4e73df; /* Cor do ícone */
+  margin-bottom: 20px;
+  transition: color 0.3s ease; /* Transição suave para o ícone */
+}
+
+.card:hover .icon-wrapper {
+  color: #f39c12; /* Muda a cor do ícone no hover */
+}
+
+h2 {
+  font-size: 1.5rem; /* Tamanho do título dos cards */
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.value {
+  font-size: 1.4rem; /* Tamanho do valor */
+  color: #a6a6a6; /* Cor clara do texto */
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.card.direction .value {
+  color: #a1e0f6; /* Cor diferenciada para o card de direção */
+}
+
+.card.vrx .value {
+  color: #f39c12; /* Cor diferenciada para VRX */
+}
+
+.card.vry .value {
+  color: #27ae60; /* Cor diferenciada para VRY */
+}
+
+.card.button .value {
+  color: #e74c3c; /* Cor diferenciada para o botão */
+}
+
+/* Efeito de Fade nas leituras */
+.card .value {
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Fade in suave */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Detalhes nos Botões */
+button {
+  background-color: #4e73df;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #2a5c9f;
+  transform: scale(1.05);
+}
+
+/* Animação para cards */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
