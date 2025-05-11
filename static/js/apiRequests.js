@@ -4,19 +4,18 @@ function updateUI(data) {
     document.getElementById('vry').innerText = data.vry ?? 'Loading...';
 
     if (data.button_status === 1) {
-        document.getElementById('button_status').innerText = 'RELEASED';
+        document.getElementById('button_status').innerText = 'Released';
     } else if (data.button_status === 0) {
-        document.getElementById('button_status').innerText = 'PRESSED';
+        document.getElementById('button_status').innerText = 'Pressed';
     } else {
         document.getElementById('button_status').innerText = 'Loading...';
     }
-}
 
-function setLoadingUI() {
-    document.getElementById('direction').innerText = 'Loading...';
-    document.getElementById('vrx').innerText = 'Loading...';
-    document.getElementById('vry').innerText = 'Loading...';
-    document.getElementById('button_status').innerText = 'Loading...';
+    if (data.sensor_status == -1) {
+        document.getElementById('sensor_status').innerText = 'Invalid Value';
+    } else {
+        document.getElementById('sensor_status').innerText = data.sensor_status ?? 'Loading...';
+    }
 }
 
 async function fetchData() {
